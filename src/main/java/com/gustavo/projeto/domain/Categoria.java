@@ -11,7 +11,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 
-
 @Entity
 public class Categoria implements Serializable {
 
@@ -24,10 +23,9 @@ public class Categoria implements Serializable {
 	private Integer id;
 	private String name;
 	private String descricao;
-	
+
 	private List<Livro> livros = new ArrayList<>();
-	
-	
+
 	@OneToMany(mappedBy = "categoria")
 	public Categoria() {
 		super();
@@ -89,6 +87,5 @@ public class Categoria implements Serializable {
 		Categoria other = (Categoria) obj;
 		return Objects.equals(id, other.id);
 	}
-	
-	
+
 }
